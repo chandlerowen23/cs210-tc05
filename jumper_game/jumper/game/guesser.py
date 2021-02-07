@@ -33,5 +33,9 @@ class Guesser():
     def get_back_fails(self):
         return self.fails
 
+    #returns word from do_guess
+    def get_back_word(self):
+        return self.word
+
 
 

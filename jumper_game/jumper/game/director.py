@@ -37,6 +37,7 @@ class Director:
         message = self.guesser.get_hint()
         self.console.write(message)
         self.killer.get_fails(self.fails)
+
         while self.keep_playing:
             self.get_inputs()
             self.do_updates()
@@ -44,6 +45,7 @@ class Director:
 
             if self.fails == 4:
                 self.keep_playing = False
+
 
 
     def get_inputs(self):
@@ -58,7 +60,6 @@ class Director:
         self.letter = self.console.read_word("Guess a letter [a-z]: ")
 
 
-
     def do_updates(self):
         """Updates the important game information for each round of play. In 
         this case, that means the rabbit watches the hunter.
@@ -68,9 +69,15 @@ class Director:
         """
 
         hint = self.guesser.do_guess(self.letter)
-        self.console.write(hint)
-        self.fails = self.guesser.get_back_fails()
+        word = self.guesser.get_back_word()
 
+        #Comparing if the hint is equal the word to finish the game
+        if hint == word:
+            self.console.write(hint)
+            self.keep_playing = False
+        else:
+            self.console.write(hint)
+            self.fails = self.guesser.get_back_fails()
 
         
     def do_outputs(self):
