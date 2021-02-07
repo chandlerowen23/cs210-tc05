@@ -42,5 +42,6 @@ class Console:
             self (Screen): An instance of Screen.
             text (string): The text to display.
         """
+        #adding a space after each underscore
         result = " ".join(text)
         print(result)
