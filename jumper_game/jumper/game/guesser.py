@@ -28,7 +28,8 @@ class Guesser():
             self.fails += 1
 
         return self.display
-
+    
+    #returns fails from do_guess
     def get_back_fails(self):
         return self.fails
 
