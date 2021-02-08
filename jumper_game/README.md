@@ -35,4 +35,6 @@ root                    (project root folder)
 ## Authors
 ---
 * TODO: Add your names and emails here
+
 Chandler Owen, owenc@byui.edu
+Christian Josue Martinez mar16125@byui.edu
